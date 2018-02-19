@@ -107,12 +107,13 @@
                 session_start();
                 $_SESSION["ID"] = $fila[0];
             }
-            if( !isset($_SESSION["ID"]) ){
-                echo '<script language="javascript">';
-                echo 'alert("¡¡¡Error al iniciar sesion!!!, el email o la contraseña incorrectos, no existen.")';
-                echo '</script>';
+            if( !isset( $_SESSION["ID"] ) ){
+                $status="errorLogin";
+                header('Location: index.php?status=error_login');
             }
-            header('Location: index.php');
+            else{
+                header('Location: index.php');
+            }
         }
 
         function joinSession(){

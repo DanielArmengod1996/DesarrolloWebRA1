@@ -65,7 +65,12 @@ else
             if( isset( $status ) ) {
                 if ($status = "cerrar_sesion") {
                     unset( $_SESSION["ID"] );
-                    $status = null;
+                    $status = "";
+                }else if( $status = "error_login" ){
+                    echo '<script language="javascript">';
+                    echo 'alert("¡¡¡Error al iniciar sesion!!!, el email o la contraseña incorrectos, no existen.")';
+                    echo '</script>';
+                    $status = "";
                 }
             }
         ?>
