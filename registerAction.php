@@ -9,4 +9,4 @@
 
     $obj = new Actions;
     $sql = "INSERT INTO usuarios (nombre, apellidos, nick, password, email, fecha_nacimiento, admin) VALUES ( ? , ? , ? , ? , ? , ? , ? )";
-    $obj -> registerAccount( $sql, Array( $nombre, $apellidos, $nick, $contrasena, $email, $fechaNacimiento, 0 ) );
+    $obj -> registerAccount( $sql, Array( $nombre, $apellidos, $nick, sha1( $contrasena ), $email, $fechaNacimiento, 0 ) );
