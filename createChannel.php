@@ -11,10 +11,16 @@
     $descripcion        = $_POST['descripcion'];
     $categoria          = $_POST['categoria'];
     $canales            = $_POST['canales'];
-    $mayorEdad          = $_POST['mayorEdad'];
-    $miIdSesion         = $_POST["id_session"];
+    $mayorEdad          = $_POST['mayorEdad'] == 'on' ? 1 : 0;
+    $miIdSesion         = intval( $_POST["id_session"] );
 
-    echo $miIdSesion;
+    echo $nombre . "</br>";
+    echo $imagen . "</br>";
+    echo $descripcion . "</br>";
+    echo $categoria . "</br>";
+    echo $canales . "</br>";
+    echo $mayorEdad . "</br>";
+    echo $miIdSesion . "</br>";
 
     include 'Actions.php';
     $obj = new Actions;
