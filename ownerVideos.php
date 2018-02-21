@@ -2,10 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: daniel
- * Date: 19/02/2018
- * Time: 22:11
+ * Date: 20/02/2018
+ * Time: 20:45
  */
 
-    $obj = new Actions;
+require "Actions.php";
+$obj = new Actions;
+
+$obj->getListChanels( $_SESSION["ID"] );
 
 ?>
+
+<a href="?id=createChannelForm" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Crear un Video</a>

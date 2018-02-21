@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d67f4034-7bd2-42c3-bc9b-7c06cb676e2f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createChannel.php" afterPath="$PROJECT_DIR$/createChannel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createVideo.php" afterPath="$PROJECT_DIR$/createVideo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createVideoForm.php" afterPath="$PROJECT_DIR$/createVideoForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ownerVideos.php" afterPath="$PROJECT_DIR$/ownerVideos.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="createChannelForm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createChannelForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="15" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -27,8 +28,8 @@
       <file leaf-file-name="Actions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Actions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+            <state relative-caret-position="493">
+              <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
               <folding>
                 <marker date="1519234771777" expanded="true" signature="190:252" ph="SELECT * FRO... usuarios" />
                 <marker date="1519234771777" expanded="true" signature="1412:1432" ph="SELECT * FRO... videos" />
@@ -42,11 +43,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createChannel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createVideo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createVideo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createVideoForm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createVideoForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="66" lean-forward="true" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createChannel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createChannel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="154" />
+            <state relative-caret-position="306">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="2" />
               <folding>
                 <marker date="1519235835701" expanded="true" signature="717:859" ph="INSERT INTO canales... " />
               </folding>
@@ -79,11 +100,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ownerVideos.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ownerVideos.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ownerVideos.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ownerChannels.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ownerChannels.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,7 +151,6 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/loginAction.php" />
         <option value="$PROJECT_DIR$/sesion.php" />
-        <option value="$PROJECT_DIR$/ownerVideos.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ownerChannels.php" />
@@ -129,6 +159,9 @@
         <option value="$PROJECT_DIR$/createChannelForm.php" />
         <option value="$PROJECT_DIR$/Actions.php" />
         <option value="$PROJECT_DIR$/createChannel.php" />
+        <option value="$PROJECT_DIR$/createVideo.php" />
+        <option value="$PROJECT_DIR$/createVideoForm.php" />
+        <option value="$PROJECT_DIR$/ownerVideos.php" />
       </list>
     </option>
   </component>
@@ -187,15 +220,16 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Blog" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dani\PhpstormProjects\miPagina" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dani\Documents\miPagina\css" />
       <recent name="C:\Users\dani\PhpstormProjects\miPagina\img" />
       <recent name="C:\Users\dani\PhpstormProjects\miPagina" />
       <recent name="C:\Users\dani\PhpstormProjects\miPagina\fptd\img" />
       <recent name="C:\Users\dani\PhpstormProjects\miPagina\fptd" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\daniel\Documents\desarrolloWebRa1" />
+      <recent name="C:\Users\dani\PhpstormProjects\miPagina" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,12 +284,12 @@
       <workItem from="1518955642571" duration="1690000" />
       <workItem from="1519064659984" duration="12573000" />
       <workItem from="1519151898049" duration="12846000" />
-      <workItem from="1519233575585" duration="2336000" />
+      <workItem from="1519233575585" duration="3067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82512000" />
+    <option name="totallyTimeSpent" value="83243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -552,22 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createVideoForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ownerChannels.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -584,14 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createVideo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -600,35 +610,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createChannelForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-          <folding>
-            <marker date="1519234771777" expanded="true" signature="190:252" ph="SELECT * FRO... usuarios" />
-            <marker date="1519234771777" expanded="true" signature="1412:1432" ph="SELECT * FRO... videos" />
-            <marker date="1519234771777" expanded="true" signature="2711:2725" ph="SELECT * FRO... videos" />
-            <marker date="1519234771777" expanded="true" signature="2711:2751" ph="SELECT * FRO... canales" />
-            <marker date="1519234771777" expanded="true" signature="2711:2753" ph="SELECT * FRO... canales" />
-            <marker date="1519234771777" expanded="true" signature="4168:4178" ph="SELECT FROM USUARIO... " />
-            <marker date="1519234771777" expanded="true" signature="4168:4224" ph="SELECT Id FR... Usuarios" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ownerVideos.php">
+    <entry file="file://$PROJECT_DIR$/registerAction.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1519156458439" expanded="true" signature="329:454" ph="INSERT INTO usuarios... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,23 +631,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registerAction.php">
+    <entry file="file://$PROJECT_DIR$/Actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        <state relative-caret-position="493">
+          <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
           <folding>
-            <marker date="1519156458439" expanded="true" signature="329:454" ph="INSERT INTO usuarios... " />
+            <marker date="1519234771777" expanded="true" signature="190:252" ph="SELECT * FRO... usuarios" />
+            <marker date="1519234771777" expanded="true" signature="1412:1432" ph="SELECT * FRO... videos" />
+            <marker date="1519234771777" expanded="true" signature="2711:2725" ph="SELECT * FRO... videos" />
+            <marker date="1519234771777" expanded="true" signature="2711:2751" ph="SELECT * FRO... canales" />
+            <marker date="1519234771777" expanded="true" signature="2711:2753" ph="SELECT * FRO... canales" />
+            <marker date="1519234771777" expanded="true" signature="4168:4178" ph="SELECT FROM USUARIO... " />
+            <marker date="1519234771777" expanded="true" signature="4168:4224" ph="SELECT Id FR... Usuarios" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/createChannel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="154" />
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="2" />
           <folding>
             <marker date="1519235835701" expanded="true" signature="717:859" ph="INSERT INTO canales... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createChannelForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerChannels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createVideo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createVideoForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="66" lean-forward="true" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ownerVideos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
