@@ -2,6 +2,7 @@
 
     <form action="createChannel.php" method="post">
         <h2 class="form-signin-heading">Creación de un canal </h2>
+        <input name="id_session" type="hidden" id="inputNombre" value="<?php echo $_SESSION["ID"] ?>" autofocus="">
         <label for="inputNombre" class="sr-only">Nombre</label>
         <input name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre" required="" autofocus="">
         </br>
