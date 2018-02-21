@@ -7,7 +7,7 @@
             $sql = "SELECT * FROM usuarios WHERE password = $password AND email = $email";
         }
         
-        function registerAccount( $sql, $parametros = array()){
+        function register( $sql, $parametros = array()){
 
             $conexion = Actions:: joinSession();
 
@@ -33,7 +33,7 @@
                 $sentencia->execute();
                 $sentencia->close();
                 $conexion->close();
-                header('Location: index.php');
+                //header('Location: index.php');
             }
         }
 
@@ -72,6 +72,50 @@
             }
             ?>
                 </div>
+            <?php
+            $sentencia->close();
+            $conexion->close();
+
+            return $listVideos;
+
+        }
+
+        function getListChanels( $param ){
+            $conexion = Actions:: joinSession();
+
+            $listVideos = array();
+
+            $sql = "SELECT * FROM canales WHERE id_usuario = ?" ;
+            $sentencia = $conexion->prepare($sql);
+            $sentencia->bind_param("i", $param);
+            $sentencia->execute();
+            $resultado = $sentencia->get_result();
+            ?>
+            <div class="card-group">
+            <?php
+            $cont = 0;
+            while( $fila = $resultado->fetch_row() ) {
+                $cont++;
+                ?>
+
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title"><?php echo $fila[0] ?></h4>
+                        <p class="card-text"><?php echo $fila[1] ?></p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+
+                <?php
+                if( $cont % 3 == 0 ) {
+                    ?>
+                    </div>
+                    <div class="card-group">
+                    <?php
+                }
+            }
+            ?>
+            </div>
             <?php
             $sentencia->close();
             $conexion->close();

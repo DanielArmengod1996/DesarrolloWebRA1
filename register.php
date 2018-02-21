@@ -1,7 +1,7 @@
 <div class="container">
 
     <form action="registerAction.php" method="post">
-        <h2 class="form-signin-heading">Creación de nueva cuenta.</h2>
+        <h2 class="form-signin-heading">Creación de nueva cuenta. </h2>
         <label for="inputEmail" class="sr-only">Dirección de email</label>
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
         </br>

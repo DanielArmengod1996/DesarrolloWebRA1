@@ -1,5 +1,9 @@
 <?php
-$status = null;
+session_start();
+if (isset($_REQUEST["status"]))
+    $status = $_REQUEST["status"];
+else
+    $status = "";
 
 if (isset($_REQUEST["id"]))
     $id = $_REQUEST["id"];
@@ -27,6 +31,15 @@ else
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <?php
+                if( isset( $_REQUEST["status"] ) ) {
+                    $status = $_REQUEST["status"];
+                    if ($status == "cerrar_sesion") {
+                        unset($_SESSION["ID"]);
+                        $status = "";
+                    }
+                }
+            ?>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
@@ -37,12 +50,11 @@ else
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
                     <?php
-                    session_start();
                     if ( isset( $_SESSION["ID"] ) ){ ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi sesión</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="?id=ownerVideos">Mis videos</a>
+                            <a class="dropdown-item" href="?id=ownerChannels">Mis canales</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="?status=cerrar_sesion">Cerrar sesion</a>
                         </div>
@@ -55,25 +67,6 @@ else
                 </form>
             </div>
         </nav>
-
-        <!--
-            comprobante de estado
-        -->
-        <?php
-            //si el estado se encuentra en cerrar_sesion, cerramos la sesion y le establecemos de nuevo la id a l
-            $status = $_REQUEST["status"];
-            if( isset( $status ) ) {
-                if ($status = "cerrar_sesion") {
-                    unset( $_SESSION["ID"] );
-                    $status = "";
-                }else if( $status = "error_login" ){
-                    echo '<script language="javascript">';
-                    echo 'alert("¡¡¡Error al iniciar sesion!!!, el email o la contraseña incorrectos, no existen.")';
-                    echo '</script>';
-                    $status = "";
-                }
-            }
-        ?>
         <main role="main" class="container">
             <div class="starter-template">
                 </br></br></br>
@@ -95,6 +88,19 @@ else
                 <div class="card-body">
                     <?php
                         include($id . ".php");
+                    ?>
+                    <!--comprobante de estado-->
+                    <?php
+                    //si el estado se encuentra en cerrar_sesion, cerramos la sesion y le establecemos de nuevo la id a l
+                    if( isset( $_REQUEST["status"] ) ) {
+                        $status = $_REQUEST["status"];
+                        if( $status == "error_login" ){
+                            echo '<script language="javascript">';
+                            echo 'alert("¡¡¡Error al iniciar sesion!!!, el email o la contraseña incorrectos, no existen.")';
+                            echo '</script>';
+                            $status = "";
+                        }
+                    }
                     ?>
                 </div>
             </div>
