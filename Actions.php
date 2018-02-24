@@ -33,7 +33,7 @@
                 $sentencia->execute();
                 $sentencia->close();
                 $conexion->close();
-                header('Location: index.php');
+                //header('Location: index.php');
             }
         }
 
@@ -171,6 +171,7 @@
                 return $listVideos;
 
             }
+        }
 
             function iniciar($parametros = array())
             {
@@ -219,5 +220,4 @@
                 return $conexion;
             }
 
-        }
     }

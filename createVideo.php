@@ -1,29 +1,26 @@
 <?php
-/**
+    /**
  * Created by PhpStorm.
  * User: daniel
  * Date: 20/02/2018
  * Time: 20:57
  */
 
-$nombre             = $_POST['nombre'];
-$imagen             = $_POST['imagen'];
-$descripcion        = $_POST['descripcion'];
-$categoria          = $_POST['categoria'];
-$canales            = $_POST['canales'];
-$mayorEdad          = $_POST['mayorEdad'] == 'on' ? 1 : 0;
-$miIdSesion         = intval( $_POST["id_session"] );
+    $titulo             = $_POST['titulo'];
+    $contenido          = $_POST['contenido'];
+    $rutaVideo          = $_POST['rutaVideo'];
+    $etiquetas          = $_POST['etiquetas'];
+    $canal              = intval( $_POST['idCanal'] );
 
-echo $nombre . "</br>";
-echo $imagen . "</br>";
-echo $descripcion . "</br>";
-echo $categoria . "</br>";
-echo $canales . "</br>";
-echo $mayorEdad . "</br>";
-echo $miIdSesion . "</br>";
+    echo "titulo"       . $titulo . "<br/>";
+    echo "contenido"    . $contenido . "<br/>";
+    echo "ruta video"   . $rutaVideo . "<br/>";
+    echo "etiquetas"    . $etiquetas . "<br/>";
+    echo "canal"        . $canal . "<br/>";
 
-include 'Actions.php';
-$obj = new Actions;
-$sql = "INSERT INTO canales (nombre, imagen, descripcion, categoria, canales_recomendados, isAdultos, id_usuario) VALUES ( ? , ? , ? , ? , ? , ? , ? )";
-$obj -> register( $sql, Array( $nombre, $imagen, $descripcion, $categoria, $canales, $mayorEdad, $miIdSesion ) );
+    include 'Actions.php';
+    $obj = new Actions;
+    $sql = "INSERT INTO videos ( titulo, contenido, ruta_video, etiquetas, id_canal ) VALUES ( ? , ? , ? , ?, ? )";
+    $obj -> register( $sql, Array( $titulo, $contenido, $rutaVideo, $etiquetas, $canal ) );
+
 ?>
