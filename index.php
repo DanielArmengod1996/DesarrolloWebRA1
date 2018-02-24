@@ -5,6 +5,13 @@ if (isset($_REQUEST["status"]))
 else
     $status = "";
 
+if ( isset( $_REQUEST["id_canal"] ) ){
+    $id_canal = $_REQUEST["id_canal"];
+}
+else{
+    $id_usuario = "";
+}
+
 if (isset($_REQUEST["id"]))
     $id = $_REQUEST["id"];
 else
