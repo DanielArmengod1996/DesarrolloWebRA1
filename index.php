@@ -1,7 +1,8 @@
 <?php
     session_start();
-    $upload_max_filesize = 99999999;
-    $post_max_size = 99999999;
+    $upload_max_filesize = 100000;
+    $post_max_size = 100000;
+
     if (isset($_REQUEST["status"]))
         $status = $_REQUEST["status"];
     else
@@ -18,6 +19,10 @@
         $id = $_REQUEST["id"];
     else
         $id = "login";
+
+    if(!isset($posicion)){
+        $posicion = 0;
+    }
 
 ?>
 
@@ -112,8 +117,28 @@
                     <?php
                         include($id . ".php");
                     ?>
+                    <?php
+                    if( $id == "videos" ){
+                    ?>
+                        <div>
+                            <label class="btn btn-dark btn-sm">
+                                <a type="radio" href="?id=videos&mode=-1&posicion= <?php echo $posicion ?> " name="options" id="option1" autocomplete="off"> ATRÁS </a>
+                            </label>
+                            <label class="btn btn-secondary btn-sm">
+                                <a type="radio" name="options" id="option2" autocomplete="off"><?php echo $posicion?></a>
+                            </label>
+                            <label class="btn btn-dark btn-sm">
+                                <a type="radio" href="?id=videos&mode=+1&posicion= <?php echo $posicion ?> " name="options" id="option3" autocomplete="off"> ADELANTE </a>
+                            </label>
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <!--comprobante de estado-->
                     <?php
+                    /*href="?id=videos&mode=+1&posicion=" <?php echo $posicion ?> "*/
+                    /*href="?id=videos&mode=-1&posicion=" <?php echo $posicion ?> "*/
+
                     //si el estado se encuentra en cerrar_sesion, cerramos la sesion y le establecemos de nuevo la id a l
                     if( isset( $_REQUEST["status"] ) ) {
                         $status = $_REQUEST["status"];
