@@ -107,8 +107,9 @@
                     <div class="card-block">
                         <h4 class="card-title"><?php echo $fila[1] ?></h4>
                         <p class="card-text"><?php echo $fila[2] ?></p>
-                        <a type="button" href="<?php echo "?id=ownerVideos&id_canal=" . $fila[0] ?>"
-                           class="btn btn-primary btn-lg">Ver videos</a>
+                        <a type="button" href="<?php echo "?id=ownerVideos&id_canal=" . $fila[0] ?>" class="btn btn-primary">Ver videos</a>
+                        <a type="button" class="btn btn-warning" href="<?php echo "?id=updateChannelForm&id_canal=" . $fila[0] ?>">EDIT</a>
+                        <a type="button" class="btn btn-danger">DELETE</a>
                         <p class="card-text">
                             <small class="text-muted">canal</small>
                         </p>
@@ -154,7 +155,9 @@
                 <div class="card-block">
                     <h4 class="card-title"><?php echo $fila[0] ?></h4>
                     <p class="card-text">  <?php echo $fila[2] ?></p>
-                    <a type="button" href="<?php echo "?id=ownerComentarios&id_video=" . $fila[4] ?>" class="btn btn-primary btn-lg">Ver comentarios</a>
+                    <a type="button" href="<?php echo "?id=ownerComentarios&id_video=" . $fila[4] ?>" class="btn btn-primary">Ver comentarios</a>
+                    <a type="button" class="btn btn-warning" href="<?php echo "?id=updateVideoForm&id_video=" . $fila[4] ?>">EDIT</a>
+                    <a type="button" class="btn btn-danger">DELETE</a>
                     <p class="card-text">
                         <small class="text-muted">video</small>
                     </p>
@@ -198,8 +201,8 @@
                         <div class="card-block">
                             <h4 class="card-title"><?php echo $fila[1] ?></h4>
                             <p class="card-text">  <?php echo $fila[2] ?></p>
-                            <p class="card-text">
-                                <small class="text-muted">Fecha creación : <?php echo $fila[3] ?></small>
+                            <a type="button" class="btn btn-danger">DELETE</a>
+                            <p class="card-text"><small class="text-muted">Fecha creación : <?php echo $fila[3] ?></small>
                             </p>
                         </div>
                     </div>
