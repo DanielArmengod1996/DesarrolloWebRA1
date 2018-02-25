@@ -1,22 +1,26 @@
 <?php
-session_start();
-if (isset($_REQUEST["status"]))
-    $status = $_REQUEST["status"];
-else
-    $status = "";
+    session_start();
+    $upload_max_filesize = 99999999;
+    $post_max_size = 99999999;
+    if (isset($_REQUEST["status"]))
+        $status = $_REQUEST["status"];
+    else
+        $status = "";
 
-if ( isset( $_REQUEST["id_canal"] ) ){
-    $id_canal = $_REQUEST["id_canal"];
-}
-else{
-    $id_usuario = "";
-}
+    if ( isset( $_REQUEST["id_canal"] ) ){
+        $id_canal = $_REQUEST["id_canal"];
+    }
+    else{
+        $id_usuario = "";
+    }
 
-if (isset($_REQUEST["id"]))
-    $id = $_REQUEST["id"];
-else
-    $id = "login";
+    if (isset($_REQUEST["id"]))
+        $id = $_REQUEST["id"];
+    else
+        $id = "login";
+
 ?>
+
 <html>
     <head>
         <!-- Bootstrap core JavaScript
@@ -34,7 +38,7 @@ else
     <body>
 
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">CodeTube</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,12 +54,15 @@ else
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="?id=login">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
+                    <?php
+                    if( !isset( $_SESSION["ID"] ) ) {
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?id=login">Inicio</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
                     <?php
                     if ( isset( $_SESSION["ID"] ) ){ ?>
                     <li class="nav-item dropdown">
@@ -84,12 +91,22 @@ else
                         <li class="nav-item">
                             <a class="nav-link" href="?id=videos">Videos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?id=login">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
+                        <?php
+                        if( !isset( $_SESSION["ID"] ) ) {
+                            ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="?id=login">Inicio</a>
+                                </li>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                        if( isset( $_SESSION["ID"] ) ){
+                        ?>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="?id=ownerChannels">Mis Canales</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="card-body">

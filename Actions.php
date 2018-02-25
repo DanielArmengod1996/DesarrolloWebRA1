@@ -33,7 +33,7 @@
                 $sentencia->execute();
                 $sentencia->close();
                 $conexion->close();
-                //header('Location: index.php');
+                //header('Location: index.php?id=videos');
             }
         }
 
@@ -107,7 +107,7 @@
                         <h4 class="card-title"><?php echo $fila[1] ?></h4>
                         <p class="card-text"><?php echo $fila[2] ?></p>
                         <a type="button" href="<?php echo "?id=ownerVideos&id_canal=" . $fila[0] ?>"
-                           class="btn btn-primary btn-lg">Large button</a>
+                           class="btn btn-primary btn-lg">Ver videos</a>
                         <p class="card-text">
                             <small class="text-muted">canal</small>
                         </p>
@@ -132,45 +132,84 @@
 
         }
 
-        function getListVideosFromChannel($param)
-        {
-            $conexion = Actions:: joinSession();
+        function getListVideosFromChannel( $param ){
+        $conexion = Actions:: joinSession();
+        $listVideos = array();
 
+        $sql = "SELECT * FROM videos WHERE id_canal = ?";
+        $sentencia = $conexion->prepare($sql);
+        $sentencia->bind_param("i", $param);
+        $sentencia->execute();
+        $resultado = $sentencia->get_result();
+        ?>
+        <div class="card-group">
+        <?php
+        $cont = 0;
+        while ($fila = $resultado->fetch_row()) {
+            $cont++;
+            ?>
+
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title"><?php echo $fila[0] ?></h4>
+                    <p class="card-text">  <?php echo $fila[2] ?></p>
+                    <a type="button" href="<?php echo "?id=ownerComentarios&id_video=" . $fila[4] ?>" class="btn btn-primary btn-lg">Ver comentarios</a>
+                    <p class="card-text">
+                        <small class="text-muted">video</small>
+                    </p>
+                </div>
+            </div>
+
+            <?php
+            if ($cont % 3 == 0) {
+                ?>
+                </div>
+                <div class="card-group">
+                <?php
+            }
+        }
+        ?>
+        </div>
+        <?php
+        $sentencia->close();
+        $conexion->close();
+
+        return $listVideos;
+
+    }
+        function getListComentariosFromVideo( $param ){
+            $conexion = Actions:: joinSession();
             $listVideos = array();
 
-            $sql = "SELECT * FROM videos WHERE id_canal = ?";
+            $sql = "SELECT * FROM comentarios WHERE id_video = ?";
             $sentencia = $conexion->prepare($sql);
             $sentencia->bind_param("i", $param);
             $sentencia->execute();
             $resultado = $sentencia->get_result();
             ?>
-
             <?php
             $cont = 0;
             while ($fila = $resultado->fetch_row()) {
                 $cont++;
                 ?>
-
-                <div class="card">
-                    <div class="card-block">
-                        <h4 class="card-title"><?php echo $fila[1] ?></h4>
-                        <p class="card-text"><?php echo $fila[2] ?></p>
-                        <a type="button" href="<?php echo "?id=ownerVideos&id_canal=" . $fila[0] ?>"
-                           class="btn btn-primary btn-lg">Large button</a>
-                        <p class="card-text">
-                            <small class="text-muted">canal</small>
-                        </p>
+                <div class="card-group">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title"><?php echo $fila[1] ?></h4>
+                            <p class="card-text">  <?php echo $fila[2] ?></p>
+                            <p class="card-text">
+                                <small class="text-muted">Fecha creación : <?php echo $fila[3] ?></small>
+                            </p>
+                        </div>
                     </div>
                 </div>
-
-                }
-                <?php
-                $sentencia->close();
-                $conexion->close();
-
-                return $listVideos;
-
+            <?php
             }
+            $sentencia->close();
+            $conexion->close();
+
+            return $listVideos;
+
         }
 
             function iniciar($parametros = array())
