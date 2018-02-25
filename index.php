@@ -79,10 +79,6 @@
                     </li>
                     <?php } ?>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" onfocus="?id=videos" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
         <main role="main" class="container">
@@ -114,7 +110,14 @@
                     </ul>
                 </div>
                 <div class="card-body">
+                    <?php if( $id == "videos" ){ ?>
+                    <form method = "post" action="searchVideos.php" class="form-inline my-2 my-lg-0">
+                        <input name = "nameVideo" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+
                     <?php
+                    }
                         include($id . ".php");
                     ?>
                     <?php

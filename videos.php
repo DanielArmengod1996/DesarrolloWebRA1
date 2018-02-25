@@ -1,18 +1,23 @@
 <?php
     require 'Actions.php';
+    $obj = new Actions();
 
-    if( isset( $_REQUEST["mode"] )){
-        echo $_REQUEST["mode"];
-        echo $_REQUEST["posicion"];
-        $posicion = intval( $_REQUEST["posicion"] );
-        $modo     = $_REQUEST["mode"];
-        $posicion = $posicion >= 1 && $modo == "-1" ? $posicion -=1 : $posicion +=1;
+    if( isset( $_REQUEST["nameVideo"] ) ){
+        $obj->getListSearchVideos( $_REQUEST["nameVideo"] );
     }
     else{
-        $posicion = 1;
+        if( isset( $_REQUEST["mode"] )){
+            $posicion = intval( $_REQUEST["posicion"] );
+            $modo     = $_REQUEST["mode"];
+            $posicion = $posicion >= 1 && $modo == "-1" ? $posicion -=1 : $posicion +=1;
+        }
+        else{
+            $posicion = 0;
+        }
+        $obj->getListVideos( $posicion );
     }
 
-    $obj = new Actions();
-    $nombreVideos = $obj->getListVideos( $posicion );
+
+
 
 ?>

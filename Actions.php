@@ -41,14 +41,62 @@
         {
             $conexion = Actions:: joinSession();
 
-            $min = $param*5;
-            $max = ( $param+1 ) * 5;
+            $min = $param*6;
+            $max = ( $param + 1 ) * 6;
 
             $listVideos = array();
 
             $sql = "SELECT * FROM videos LIMIT ?, ?";
             $sentencia = $conexion->prepare($sql);
             $sentencia->bind_param('ii', $min, $max );
+            $sentencia->execute();
+            $resultado = $sentencia->get_result();
+            ?>
+            <div class="card-group">
+            <?php
+            $cont = 0;
+            while ($fila = $resultado->fetch_row()) {
+                $cont++;
+                ?>
+
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title"><?php echo $fila[0] ?></h4>
+                        <p class="card-text"><?php echo $fila[1] ?></p>
+                        <img width = 200 class="card-image" src = "videos/<?php echo $fila[0] . $fila[1] . $fila[2]?>" />
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+
+                <?php
+                if ($cont % 2 == 0) {
+                    ?>
+                    </div>
+                    <div class="card-group">
+                    <?php
+                }
+            }
+            ?>
+            </div>
+            <?php
+            $sentencia->close();
+            $conexion->close();
+
+            return $listVideos;
+
+        }
+
+        function getListSearchVideos( $param )
+        {
+            $conexion = Actions:: joinSession();
+
+            $listVideos = array();
+
+            $sql = "SELECT * FROM videos WHERE titulo = ?";
+            $sentencia = $conexion->prepare($sql);
+            $sentencia->bind_param('s', $param );
             $sentencia->execute();
             $resultado = $sentencia->get_result();
             ?>
