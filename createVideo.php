@@ -14,7 +14,7 @@
 
 
     $target = "videos/";
-    $target = $target . basename( $_FILES['uploaded']['name']) ;
+    $target = $target . basename( $titulo . $contenido . $rutaVideo) ;
     $ok=1;
     if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
     {

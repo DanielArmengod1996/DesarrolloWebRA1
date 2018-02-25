@@ -69,7 +69,6 @@
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi sesión</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="?id=ownerChannels">Mis canales</a>
-                            <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="?status=cerrar_sesion">Cerrar sesion</a>
                         </div>
                     </li>

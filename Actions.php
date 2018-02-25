@@ -33,7 +33,7 @@
                 $sentencia->execute();
                 $sentencia->close();
                 $conexion->close();
-                //header('Location: index.php?id=videos');
+                header('Location: index.php?id=videos');
             }
         }
 
@@ -59,6 +59,7 @@
                     <div class="card-block">
                         <h4 class="card-title"><?php echo $fila[0] ?></h4>
                         <p class="card-text"><?php echo $fila[1] ?></p>
+                        <img width = 200 class="card-image" src = "videos/<?php echo $fila[0] . $fila[1] . $fila[2]?>" />
                         <p class="card-text">
                             <small class="text-muted">Last updated 3 mins ago</small>
                         </p>
@@ -66,7 +67,7 @@
                 </div>
 
                 <?php
-                if ($cont % 3 == 0) {
+                if ($cont % 2 == 0) {
                     ?>
                     </div>
                     <div class="card-group">
